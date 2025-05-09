@@ -352,10 +352,11 @@ border-radius: 50%;
       
       <input type="submit" value="Submit"  />
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <!-- Include your JavaScript file -->
   <script src="form-email.js"></script>
-  </section>
 
   <footer>
     The above information are genuine , keep in touch for more details..
@@ -495,7 +496,7 @@ border-radius: 50%;
       });
   });
 }
-
+   
 // Initialize EmailJS with your user ID
 emailjs.init('AONpzSuQ0m_ghXvwcD');
 
@@ -503,5 +504,17 @@ emailjs.init('AONpzSuQ0m_ghXvwcD');
 document.addEventListener('DOMContentLoaded', sendFormData);
     
   </script>
+   <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "mr_devprof",
+      });
+   })();
+</script>
+
+  
 </body>
 </html>
