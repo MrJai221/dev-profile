@@ -268,7 +268,7 @@ border-radius: 50%;
     <p class="description">
       Visakhapatnam, Andhra Pradesh | 
       <a href="mailto:devadityataddi@gmail.com" class="text-[#00aaff] hover:underline">Contact Mail</a> | 
-      <a href="https://www.linkedin.com/in/taddi-jnaneswara-rao-31504433a" target="_blank" rel="noopener noreferrer" class="text-[#00aaff] hover:underline">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/devaditya-taddi-31504433a" target="_blank" rel="noopener noreferrer" class="text-[#00aaff] hover:underline">LinkedIn</a>
     </p>
   </header>
 
@@ -350,7 +350,7 @@ border-radius: 50%;
       <label for="comment">Comment</label>
       <textarea id="comment" name="Comment" rows="5" placeholder="Your message" required></textarea>
       
-      <input type="submit" value="Submit"  href="mailto:devadityataddi@gmail.com" />
+      <input type="submit" value="Submit"  />
     </form>
   </section>
 
@@ -469,7 +469,35 @@ border-radius: 50%;
       requestAnimationFrame(animate);
     }
     animate();
-    
+    function sendFormData() {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    emailjs.send('mr_devprof', 'template_abfo8j9', data)
+      .then(function(response) {
+        console.log('Success!', response.status, response.text);
+        alert('Form data sent successfully!');
+        form.reset();
+      }, function(error) {
+        console.error('Failed to send email:', error);
+        alert('Failed to send form data. Please try again.');
+      });
+  });
+}
+
+// Initialize EmailJS with your user ID
+emailjs.init('AONpzSuQ0m_ghXvwcD');
+
+// Call the function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', sendFormData);
     
   </script>
 </body>
